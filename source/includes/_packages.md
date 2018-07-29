@@ -8,7 +8,7 @@ import request from 'request';
 
 const client = request.defaults({ baseUrl: 'https://api-basic.shipveho.com/v1' });
 
-const package = {
+const new_package = {
 	destination: {
 		street: "1002 Walnut St",
 		apartment: "Suite 200",
@@ -26,7 +26,7 @@ const package = {
 const options = signRequestOptions({
   method: 'POST',
   uri: '/packages',
-  body: JSON.stringify(package),
+  body: JSON.stringify(new_package),
 });
 
 client(options, (err, response, body) => {

@@ -1,0 +1,27 @@
+machine:
+  ruby:
+    version: 2.4.0
+
+general:
+  artifacts:
+    - "build.tar.gz"
+
+dependencies:
+  pre:
+    # install bundler
+    - gem install bundler
+
+checkout:
+  post:
+    - bundle install
+
+test:
+  override:
+    - bundle exec middleman build --clean
+    - tar -cvzf build.tar.gz build
+
+    # copy tarball
+    scp -oStrictHostKeyChecking=no build.tar.gz $SSH_USER@$SSH_SERVER:$DEPLOY_PATH
+
+    # execute build script on server
+    - ssh -oStrictHostKeyChecking=no $SSH_USER@$SSH_SERVER $BUILD_SCRIPT

@@ -113,7 +113,7 @@ If not declared otherwise, <strong>all parameters are required</strong>.
 
 ### Returns
 
-Creating a package object returns the package object, including all the inputted data, addition of any optional data above that has default values, and some additional default and server-generated data:
+Creating a package object returns the package object, including all the inputted data, any optional data that has default values, and some server-generated data:
 
 Parameter | Type |  Description
 --------- | ----------- | -----------

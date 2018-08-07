@@ -348,7 +348,8 @@ shipments and download shipping labels.</p>
     </span><span class="s2">"currentState"</span><span class="p">:</span><span class="w"> </span><span class="s2">"created"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"barcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"veho_id_BSG6XZQrgwieFFJPx"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"customerTrackingLink"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://tracking.shipveho.com/i/BSG6XZQrgwieFFJPx"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"zplShippingLabelLink"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://labels.shipveho.com/zpl/BSG6XZQrgwieFFJPx"</span><span class="w">
+    </span><span class="s2">"zplShippingLabelLink"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://labels.shipveho.com/zpl/BSG6XZQrgwieFFJPx"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint creates a new package. This endpoint should be used by a client upon order completion or fulfillment of an item to notify Veho that there are packages to be shipped, and obtain a barcode and/or shipping label from Veho.</p>
@@ -497,6 +498,11 @@ If not declared otherwise, <strong>all parameters are required</strong>.
 <td><code>string</code></td>
 <td>link to zpl shipping label file</td>
 </tr>
+<tr>
+<td>rate</td>
+<td><code>Number</code></td>
+<td>rate the customer will be charged, in USD pennies (1000 is $10 USD)</td>
+</tr>
 </tbody></table>
 <h2 id='get-a-package'>Get a package</h2><pre class="highlight javascript tab-javascript"><code><span class="kr">import</span> <span class="nx">request</span> <span class="nx">from</span> <span class="s1">'request'</span><span class="p">;</span>
 
@@ -539,7 +545,8 @@ If not declared otherwise, <strong>all parameters are required</strong>.
     </span><span class="s2">"currentState"</span><span class="p">:</span><span class="w"> </span><span class="s2">"created"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"barcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"veho_id_BSG6XZQrgwieFFJPx"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"customerTrackingLink"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://tracking.shipveho.com/i/BSG6XZQrgwieFFJPx"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"zplShippingLabelLink"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://labels.shipveho.com/zpl/BSG6XZQrgwieFFJPx"</span><span class="w">
+    </span><span class="s2">"zplShippingLabelLink"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://labels.shipveho.com/zpl/BSG6XZQrgwieFFJPx"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all details of an existing package.</p>

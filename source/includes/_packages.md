@@ -20,7 +20,8 @@ const new_package = {
 	recipient: "John Smith",
 	instructions: "Leave on front porch behind railing. Beware of dog!",
 	serviceClass: "nextDay",
-	signatureRequired: "true"
+	signatureRequired: "true",
+	declaredValue: 5000
 };
 
 const options = signRequestOptions({
@@ -62,7 +63,9 @@ client(options, (err, response, body) => {
     "currentState": "created",
     "barcode": "veho_id_BSG6XZQrgwieFFJPx",
     "customerTrackingLink": "https://tracking.shipveho.com/i/BSG6XZQrgwieFFJPx",
-    "zplShippingLabelLink": "https://labels.shipveho.com/zpl/BSG6XZQrgwieFFJPx"
+    "zplShippingLabelLink": "https://labels.shipveho.com/zpl/BSG6XZQrgwieFFJPx",
+    "rate": 1000,
+    "declaredValue": 5000
 }
 ```
 
@@ -89,6 +92,7 @@ width | `integer` | `optional` width of the package, in in
 height | `integer` | `optional` height of the package, in in
 length | `integer` | `optional` length of the package, in in
 weight | `integer` | `optional` weight of the package, in lbs
+declaredValue | `Number` | `optional` declared value of shipment, in USD pennies (5000 is $50 USD)
 
 <aside class="info">
 If not declared otherwise, <strong>all parameters are required</strong>.
@@ -121,6 +125,7 @@ currentState | `string` | current state of the package
 barCode | `string` | content of the [Code128](https://en.wikipedia.org/wiki/Code_128) bar code the package will have
 customerTrackingLink | `string` | mobile tracking link that can be shared with customer
 zplShippingLabelLink | `string` | link to zpl shipping label file
+rate | `Number` | rate the customer will be charged, in USD pennies (1000 is $10 USD)
 
 ## Get a package
 
@@ -167,7 +172,9 @@ client(options, (err, response, body) => {
     "currentState": "created",
     "barcode": "veho_id_BSG6XZQrgwieFFJPx",
     "customerTrackingLink": "https://tracking.shipveho.com/i/BSG6XZQrgwieFFJPx",
-    "zplShippingLabelLink": "https://labels.shipveho.com/zpl/BSG6XZQrgwieFFJPx"
+    "zplShippingLabelLink": "https://labels.shipveho.com/zpl/BSG6XZQrgwieFFJPx",
+    "rate": 1000,
+    "declaredValue": 5000
 }
 ```
 

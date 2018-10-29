@@ -62,8 +62,9 @@ client(options, (err, response, body) => {
     "createdAt": "2018-07-29T01:09:31.690Z",
     "currentState": "created",
     "barcode": "veho_id_BSG6XZQrgwieFFJPx",
-    "customerTrackingLink": "https://tracking.shipveho.com/i/BSG6XZQrgwieFFJPx",
-    "zplShippingLabelLink": "https://labels.shipveho.com/zpl/BSG6XZQrgwieFFJPx",
+    "zplShippingLabelLink": "https://api-basic.shipveho.com/v1/labels/BSG6XZQrgwieFFJPx.zpl",
+    "pdfShippingLabelLink": "https://api-basic.shipveho.com/v1/labels/BSG6XZQrgwieFFJPx.pdf",
+    "pngShippingLabelLink": "https://api-basic.shipveho.com/v1/labels/BSG6XZQrgwieFFJPx.png",
     "rate": 1000,
     "declaredValue": 5000
 }
@@ -123,9 +124,10 @@ Parameter | Type |  Description
 --------- | ----------- | -----------
 currentState | `string` | current state of the package
 barCode | `string` | content of the [Code128](https://en.wikipedia.org/wiki/Code_128) bar code the package will have
-customerTrackingLink | `string` | mobile tracking link that can be shared with customer
 zplShippingLabelLink | `string` | link to zpl shipping label file
-rate | `Number` | rate the customer will be charged, in USD pennies (1000 is $10 USD)
+pdfShippingLabelLink | `string` | link to pdf shipping label file
+pngShippingLabelLink | `string` | link to png shipping label file
+rate | `Number` | rate client will be charged, in USD pennies (1000 is $10 USD)
 
 ## Get a package
 
@@ -171,8 +173,9 @@ client(options, (err, response, body) => {
     "createdAt": "2018-07-29T02:41:36.151Z",
     "currentState": "created",
     "barcode": "veho_id_BSG6XZQrgwieFFJPx",
-    "customerTrackingLink": "https://tracking.shipveho.com/i/BSG6XZQrgwieFFJPx",
-    "zplShippingLabelLink": "https://labels.shipveho.com/zpl/BSG6XZQrgwieFFJPx",
+    "zplShippingLabelLink": "https://api-basic.shipveho.com/v1/labels/BSG6XZQrgwieFFJPx.zpl",
+    "pdfShippingLabelLink": "https://api-basic.shipveho.com/v1/labels/BSG6XZQrgwieFFJPx.pdf",
+    "pngShippingLabelLink": "https://api-basic.shipveho.com/v1/labels/BSG6XZQrgwieFFJPx.png",
     "rate": 1000,
     "declaredValue": 5000
 }

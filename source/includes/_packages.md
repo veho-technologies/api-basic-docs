@@ -108,7 +108,7 @@ Parameter | Type |  Description
 street | `string` | street address
 apartment | `string` | `optional` apartment number, suite number, or any info on the second line of an address
 city | `string` | city of the delivery address
-zipCode | `string` | ZIP code of the address
+zipCode | `string` | ZIP code of the address (view our [service area](https://docs.google.com/document/d/1gDejLX84XwxnBxOy_JM1jdautG3CPMbkdSRP2AzZfi0/edit))
 state | `string` | state of the address <br> (can be 2 letter postal code, or full state name)
 country | `string` | 2 letter ISO country code for the address
 

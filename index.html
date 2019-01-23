@@ -219,7 +219,7 @@
         <ul class="search-results"></ul>
       <div id="toc" class="toc-list-h1">
           <li>
-            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+            <a href="#veho-api-version-1" class="toc-h1 toc-link" data-title="Veho API Version 1">Veho API Version 1</a>
           </li>
           <li>
             <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
@@ -246,8 +246,12 @@
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id='introduction'>Introduction</h1>
-<p>Welcome to the Veho API. You can use our API to programmatically create
+        <h1 id='veho-api-version-1'>Veho API Version 1</h1>
+<aside class="warning">
+  Version 1 is deprecated! Users are encouraged to use <a href="https://veho-technologies.github.io/api-docs-v2/">Veho API Version 2</a>, which is under active development.
+</aside>
+
+<p>Welcome to Veho API Version 1. You can use our API to programmatically create
 shipments and download shipping labels.</p>
 <h1 id='authentication'>Authentication</h1>
 <blockquote>
@@ -459,7 +463,7 @@ If not declared otherwise, <strong>all parameters are required</strong>.
 <tr>
 <td>zipCode</td>
 <td><code>string</code></td>
-<td>ZIP code of the address</td>
+<td>ZIP code of the address (view our <a href="https://docs.google.com/document/d/1gDejLX84XwxnBxOy_JM1jdautG3CPMbkdSRP2AzZfi0/edit">service area</a>)</td>
 </tr>
 <tr>
 <td>state</td>
@@ -628,6 +632,10 @@ Remember — GET requests must contain an <code>apiKey</code> header.
 <tr>
 <td>410</td>
 <td>Gone -- The resource requested has been removed from our servers.</td>
+</tr>
+<tr>
+<td>422</td>
+<td>Unprocessable Entity -- The request entity is syntactically correct but semantically incorrect.</td>
 </tr>
 <tr>
 <td>429</td>
